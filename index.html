@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adworld Designers | High Quality Designs</title>
+    <title>Adworld Designers | Creative Designs, Powerful Results</title>
     <style>
         :root {
-            --primary-blue: #0056b3;
-            --accent-purple: #8a2be2;
+            --primary-blue: #00a2ff;
+            --accent-purple: #9d50bb;
+            --promo-pink: #ff0055;
+            --promo-orange: #ff8c00;
+            --dark-bg: #0b0e14;
+            --card-bg: #161b22;
             --yellow: #ffcc00;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             line-height: 1.6;
+            background-color: #ffffff;
             color: #333;
         }
 
@@ -27,86 +30,114 @@
             align-items: center;
             padding: 1rem 5%;
             background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary-blue); }
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            color: #333;
+            text-transform: lowercase;
+        }
+        .logo span { color: var(--accent-purple); font-weight: 300; }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #fff 50%, #f0f7ff 50%);
-            padding: 4rem 5%;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
+            background: linear-gradient(135deg, #0b0e14 0%, #1a1a2e 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
         }
 
-        .hero-content { flex: 1; min-width: 300px; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--primary-blue); }
-        .hero-content span { color: var(--accent-purple); }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
+        .hero h1 span { color: var(--primary-blue); }
+        .hero p { font-size: 1.2rem; color: #ccc; max-width: 700px; margin: 0 auto 2rem; }
 
         .btn {
             background: var(--yellow);
             padding: 0.8rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            color: black;
+            color: #000;
+            transition: transform 0.2s;
+            display: inline-block;
         }
-
-        /* Services Section */
-        .services { padding: 4rem 5%; background: white; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            padding: 1.5rem;
-            border-left: 4px solid var(--primary-blue);
-            background: #fafafa;
-        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,204,0,0.4); }
 
         /* Pricing Section */
-        .pricing {
-            background: var(--dark);
+        .pricing-section {
+            background-color: var(--dark-bg);
+            padding: 5rem 5%;
             color: white;
-            padding: 4rem 5%;
-            text-align: center;
         }
 
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .section-header .line { width: 80px; height: 4px; background: var(--primary-blue); margin: 0 auto; }
+
         .pricing-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .price-card {
-            background: #2a2a2a;
+            background: var(--card-bg);
+            border-radius: 15px;
             padding: 2rem;
-            border-radius: 10px;
-            width: 250px;
-        }
-
-        .price-card.popular { border: 2px solid var(--primary-blue); transform: scale(1.05); }
-
-        footer {
-            background: #eee;
-            padding: 2rem 5%;
             text-align: center;
-            font-size: 0.9rem;
+            border: 1px solid #333;
+            transition: border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        /* Card Glow Effects based on Flyer Colors */
+        .card-orange { border-bottom: 5px solid var(--promo-orange); }
+        .card-purple { border-bottom: 5px solid var(--accent-purple); }
+        .card-pink { border-bottom: 5px solid var(--promo-pink); }
+        .card-blue { border-bottom: 5px solid var(--primary-blue); }
+
+        .price-card h3 { font-size: 1.2rem; margin-bottom: 5px; text-transform: uppercase; }
+        .price-card p.desc { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; min-height: 45px; }
+
+        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; margin-bottom: 0; }
+        .now-price { font-size: 2rem; font-weight: bold; margin-top: 0; margin-bottom: 1.5rem; }
+
+        /* Trust Badges */
+        .trust-bar {
+            background: #f9f9f9;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+        }
+        .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; color: #555; }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        .contact-info { margin-bottom: 1.5rem; }
+        .contact-info a { color: var(--primary-blue); text-decoration: none; margin: 0 15px; }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .trust-bar { gap: 1.5rem; }
         }
     </style>
 </head>
@@ -114,68 +145,77 @@
 
     <nav>
         <div class="logo">adworld <span>designer's</span></div>
-        <a href="tel:0754595441" class="btn">Order Now</a>
+        <a href="tel:0754595441" class="btn">Call Now</a>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>HIGH QUALITY <span>DESIGNS</span></h1>
-            <h3>AT AFFORDABLE PRICES!</h3>
-            <p>Professional ads and business logos that make your brand <strong>stand out</strong> — without breaking your budget.</p>
-            <a href="#" class="btn">Browse Portfolio</a>
-        </div>
+        <h1>CREATIVE <span>DESIGNS.</span></h1>
+        <p>Providing high-quality visual solutions to bring your vision to life. Affordable, professional, and tailored for you.</p>
+        <a href="mailto:adworlddesigners@gmail.com" class="btn">Email Us Today</a>
     </section>
 
-    <section class="services">
-        <h2 class="section-title">WHAT WE OFFER</h2>
-        <div class="grid">
-            <div class="service-card">
-                <h3>Business Logos</h3>
-                <p>Unique, modern & memorable logos that build your brand identity.</p>
-            </div>
-            <div class="service-card">
-                <h3>Promotional Ads</h3>
-                <p>Eye-catching ads that attract attention and bring results.</p>
-            </div>
-            <div class="service-card">
-                <h3>Social Media Designs</h3>
-                <p>Creative posts and banners to boost your online presence.</p>
-            </div>
-            <div class="service-card">
-                <h3>Simple Website Designs</h3>
-                <p>Clean, user-friendly websites for startups & portfolios.</p>
-            </div>
-        </div>
-    </section>
+    <div class="trust-bar">
+        <div class="trust-item">✔️ AFFORDABLE</div>
+        <div class="trust-item">🎨 CREATIVE</div>
+        <div class="trust-item">⭐ PROFESSIONAL</div>
+    </div>
 
-    <section class="pricing">
-        <h2>PRICING PLANS</h2>
-        <p>You only pay for what you need!</p>
+    <section class="pricing-section">
+        <div class="section-header">
+            <h2>PRICE LIST</h2>
+            <div class="line"></div>
+        </div>
+
         <div class="pricing-grid">
-            <div class="price-card">
-                <h3 style="color: #4caf50;">BASIC</h3>
-                <p>Budget Friendly</p>
-                <hr>
-                <p>Minimal Details</p>
+            <div class="price-card card-orange">
+                <div>
+                    <h3 style="color: var(--promo-orange);">Simple Motivations</h3>
+                    <p class="desc">Why People/Companies Should Choose You</p>
+                    <p class="old-price">WAS R300</p>
+                    <p class="now-price" style="color: var(--promo-orange);">NOW R250</p>
+                </div>
+                <a href="https://wa.me/27754595441" class="btn">Order Now</a>
             </div>
-            <div class="price-card popular">
-                <h3 style="color: #2196f3;">STANDARD</h3>
-                <p>Most Popular</p>
-                <hr>
-                <p>Balanced & Professional</p>
+
+            <div class="price-card card-purple">
+                <div>
+                    <h3 style="color: var(--accent-purple);">Ad Designs</h3>
+                    <p class="desc">High-Impact Professional Graphic Designs</p>
+                    <p style="color: #666; margin-bottom: 0;">Starting from</p>
+                    <p class="now-price" style="color: var(--accent-purple);">R350 - R1500</p>
+                </div>
+                <a href="tel:0754595441" class="btn">Get Quote</a>
             </div>
-            <div class="price-card">
-                <h3 style="color: #ff9800;">PREMIUM</h3>
-                <p>Premium Quality</p>
-                <hr>
-                <p>Unique & Custom Designs</p>
+
+            <div class="price-card card-pink">
+                <div>
+                    <h3 style="color: var(--promo-pink);">Promotion Ads</h3>
+                    <p class="desc">Limited Time Promotional Marketing Ads</p>
+                    <p class="old-price">WAS R550</p>
+                    <p class="now-price" style="color: var(--promo-pink);">NOW R400</p>
+                </div>
+                <a href="https://wa.me/27754595441" class="btn">Order Now</a>
+            </div>
+
+            <div class="price-card card-blue">
+                <div>
+                    <h3 style="color: var(--primary-blue);">Simple Websites</h3>
+                    <p class="desc">Clean, Modern, and Responsive Web Designs</p>
+                    <p style="color: #666; margin-bottom: 0;">Starting from</p>
+                    <p class="now-price" style="color: var(--primary-blue);">R1,199 - R2,499</p>
+                </div>
+                <a href="tel:0754595441" class="btn">Inquire</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Contact us: 075 459 5441 | adworlddesigners@gmail.com</p>
-        <p>&copy; 2024 Adworld Designers. 100% Satisfaction Guaranteed.</p>
+        <div class="contact-info">
+            <p><strong>LET'S BRING YOUR VISION TO LIFE!</strong></p>
+            <a href="tel:0754595441">📞 075 459 5441</a>
+            <a href="mailto:adworlddesigners@gmail.com">📧 adworlddesigners@gmail.com</a>
+        </div>
+        <p style="font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Adworld Designers. All Rights Reserved.</p>
     </footer>
 
 </body>
