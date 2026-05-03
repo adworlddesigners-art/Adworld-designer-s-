@@ -3,219 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adworld Designers | Creative Designs, Powerful Results</title>
-    <style>
-        :root {
-            --primary-blue: #00a2ff;
-            --accent-purple: #9d50bb;
-            --promo-pink: #ff0055;
-            --promo-orange: #ff8c00;
-            --dark-bg: #0b0e14;
-            --card-bg: #161b22;
-            --yellow: #ffcc00;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #ffffff;
-            color: #333;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.5rem; 
-            color: #333;
-            text-transform: lowercase;
-        }
-        .logo span { color: var(--accent-purple); font-weight: 300; }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0b0e14 0%, #1a1a2e 100%);
-            color: white;
-            padding: 6rem 5%;
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
-        .hero h1 span { color: var(--primary-blue); }
-        .hero p { font-size: 1.2rem; color: #ccc; max-width: 700px; margin: 0 auto 2rem; }
-
-        .btn {
-            background: var(--yellow);
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            color: #000;
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,204,0,0.4); }
-
-        /* Pricing Section */
-        .pricing-section {
-            background-color: var(--dark-bg);
-            padding: 5rem 5%;
-            color: white;
-        }
-
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .section-header .line { width: 80px; height: 4px; background: var(--primary-blue); margin: 0 auto; }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .price-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid #333;
-            transition: border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Card Glow Effects based on Flyer Colors */
-        .card-orange { border-bottom: 5px solid var(--promo-orange); }
-        .card-purple { border-bottom: 5px solid var(--accent-purple); }
-        .card-pink { border-bottom: 5px solid var(--promo-pink); }
-        .card-blue { border-bottom: 5px solid var(--primary-blue); }
-
-        .price-card h3 { font-size: 1.2rem; margin-bottom: 5px; text-transform: uppercase; }
-        .price-card p.desc { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; min-height: 45px; }
-
-        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; margin-bottom: 0; }
-        .now-price { font-size: 2rem; font-weight: bold; margin-top: 0; margin-bottom: 1.5rem; }
-
-        /* Trust Badges */
-        .trust-bar {
-            background: #f9f9f9;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #eee;
-        }
-        .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; color: #555; }
-
-        /* Footer */
-        footer {
-            background: #000;
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-        .contact-info { margin-bottom: 1.5rem; }
-        .contact-info a { color: var(--primary-blue); text-decoration: none; margin: 0 15px; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .trust-bar { gap: 1.5rem; }
-        }
-    </style>
+    <title>Adworld Designer's | Branding, Design, Impact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">adworld <span>designer's</span></div>
-        <a href="tel:0754595441" class="btn">Call Now</a>
+        <div class="logo">ADWORLD <span>DESIGNER'S</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <section class="hero">
-        <h1>CREATIVE <span>DESIGNS.</span></h1>
-        <p>Providing high-quality visual solutions to bring your vision to life. Affordable, professional, and tailored for you.</p>
-        <a href="mailto:adworlddesigners@gmail.com" class="btn">Email Us Today</a>
-    </section>
-
-    <div class="trust-bar">
-        <div class="trust-item">✔️ AFFORDABLE</div>
-        <div class="trust-item">🎨 CREATIVE</div>
-        <div class="trust-item">⭐ PROFESSIONAL</div>
-    </div>
-
-    <section class="pricing-section">
-        <div class="section-header">
-            <h2>PRICE LIST</h2>
-            <div class="line"></div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>BRANDING.<br>DESIGN.<br><span>IMPACT.</span></h1>
+            <p>We design more than graphics, we design <strong>your success.</strong></p>
+            <a href="#contact" class="btn-primary">LET'S TALK</a>
         </div>
+    </header>
 
-        <div class="pricing-grid">
-            <div class="price-card card-orange">
-                <div>
-                    <h3 style="color: var(--promo-orange);">Simple Motivations</h3>
-                    <p class="desc">Why People/Companies Should Choose You</p>
-                    <p class="old-price">WAS R300</p>
-                    <p class="now-price" style="color: var(--promo-orange);">NOW R250</p>
-                </div>
-                <a href="https://wa.me/27754595441" class="btn">Order Now</a>
+    <section id="services" class="services">
+        <h2>OUR SERVICES</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-pen-nib"></i>
+                <h3>LOGO & BRAND IDENTITY</h3>
+                <p>Memorable logos that build lasting impressions.</p>
             </div>
-
-            <div class="price-card card-purple">
-                <div>
-                    <h3 style="color: var(--accent-purple);">Ad Designs</h3>
-                    <p class="desc">High-Impact Professional Graphic Designs</p>
-                    <p style="color: #666; margin-bottom: 0;">Starting from</p>
-                    <p class="now-price" style="color: var(--accent-purple);">R350 - R1500</p>
-                </div>
-                <a href="tel:0754595441" class="btn">Get Quote</a>
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>GRAPHIC DESIGN</h3>
+                <p>Creative designs that speak your brand's language.</p>
             </div>
-
-            <div class="price-card card-pink">
-                <div>
-                    <h3 style="color: var(--promo-pink);">Promotion Ads</h3>
-                    <p class="desc">Limited Time Promotional Marketing Ads</p>
-                    <p class="old-price">WAS R550</p>
-                    <p class="now-price" style="color: var(--promo-pink);">NOW R400</p>
-                </div>
-                <a href="https://wa.me/27754595441" class="btn">Order Now</a>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>SOCIAL MEDIA DESIGN</h3>
+                <p>Scroll-stopping visuals that grow your engagement.</p>
             </div>
-
-            <div class="price-card card-blue">
-                <div>
-                    <h3 style="color: var(--primary-blue);">Simple Websites</h3>
-                    <p class="desc">Clean, Modern, and Responsive Web Designs</p>
-                    <p style="color: #666; margin-bottom: 0;">Starting from</p>
-                    <p class="now-price" style="color: var(--primary-blue);">R1,199 - R2,499</p>
-                </div>
-                <a href="tel:0754595441" class="btn">Inquire</a>
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>ADVERTISING DESIGN</h3>
+                <p>High-impact ads that attract, influence & convert.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>PRINT DESIGN</h3>
+                <p>Designs that look great in print and leave a mark.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="contact-info">
-            <p><strong>LET'S BRING YOUR VISION TO LIFE!</strong></p>
-            <a href="tel:0754595441">📞 075 459 5441</a>
-            <a href="mailto:adworlddesigners@gmail.com">📧 adworlddesigners@gmail.com</a>
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Create Something <br><span>EXTRAORDINARY TOGETHER!</span></h2>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 075 459 5441</p>
+                <p><i class="fas fa-envelope"></i> adworlddesigners@gmail.com</p>
+            </div>
+            <div class="footer-bar">
+                <span><i class="fas fa-star"></i> Creative Minds</span>
+                <span><i class="fas fa-bullseye"></i> Strategic Designs</span>
+                <span><i class="fas fa-chart-line"></i> Real Results</span>
+            </div>
         </div>
-        <p style="font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Adworld Designers. All Rights Reserved.</p>
     </footer>
 
 </body>
