@@ -149,6 +149,69 @@
             line-height: 1.6;
         }
 
+        /* --- BOOKING FORM STYLES --- */
+        .booking-section {
+            background: var(--surface);
+            padding: 60px 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            margin-top: 80px;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .booking-form .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #252525;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        .submit-btn {
+            background: var(--primary-gold);
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+            background: #e6b800;
+        }
+
         .cta-section {
             background: var(--primary-gold);
             color: #000;
@@ -184,11 +247,6 @@
             letter-spacing: 1px;
         }
 
-        .btn-black:hover {
-            background: #333;
-            transform: scale(1.05);
-        }
-
         footer {
             background: #000;
             padding: 80px 20px;
@@ -198,6 +256,8 @@
         }
 
         @media (max-width: 768px) {
+            .booking-form { grid-template-columns: 1fr; }
+            .booking-form .full-width { grid-column: span 1; }
             header { height: auto; padding: 120px 20px; }
             .hero-title { font-size: 2.8rem; }
             .cta-section h2 { font-size: 2.1rem; }
@@ -265,6 +325,47 @@
             </div>
         </div>
 
+        <section id="book" class="booking-section">
+            <div class="section-header">
+                <h2>Book Your Project</h2>
+                <p>Ready to start? Send me your project details below.</p>
+            </div>
+            
+            <form action="https://formspree.io/f/xvzladvn" method="POST" class="booking-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="_replyto" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Service Required</label>
+                    <select name="service">
+                        <option value="Logo Design">Logo & Brand Identity</option>
+                        <option value="Website Design">Simple Website Design</option>
+                        <option value="Advertising">Advertising Design</option>
+                        <option value="Promotional">Promotional Product Ads</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="tel" name="phone" placeholder="e.g. 075 459 5441">
+                </div>
+                <div class="form-group full-width">
+                    <label>Describe your project</label>
+                    <textarea name="message" rows="5" placeholder="Tell me what you are looking for..." required></textarea>
+                </div>
+                
+                <input type="hidden" name="_subject" value="New Booking Inquiry from Adworld Website">
+                
+                <div class="full-width" style="text-align: center;">
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                </div>
+            </form>
+        </section>
+
         <div class="cta-section">
             <h2>Let’s Create Something Extraordinary Together!</h2>
             <p>Good design isn’t expensive, it’s an investment.</p>
@@ -272,7 +373,7 @@
                 📞 075 459 5441 <br>
                 📧 adworlddesigners@gmail.com
             </div>
-            <a href="mailto:adworlddesigners@gmail.com" class="btn-black">Start Your Project</a>
+            <a href="#book" class="btn-black">Start Your Project</a>
         </div>
     </div>
 
