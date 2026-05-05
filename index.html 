@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adworld Designer's | Branding, Design, Impact</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* COLOR PALETTE & VARIABLES */
+        :root {
+            --primary: #FF3E00;    /* High-impact Orange-Red */
+            --bg-dark: #050505;    /* Deep Black */
+            --bg-card: #111111;    /* Dark Grey for Contrast */
+            --text-light: #FFFFFF; /* Pure White */
+            --text-dim: #A0A0A0;   /* Muted Grey */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(5, 5, 5, 0.98);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background: radial-gradient(circle at 80% 20%, #1a1a1a 0%, #050505 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            filter: blur(180px);
+            bottom: -100px;
+            left: -100px;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 30px rgba(255, 62, 0, 0.4);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 45px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(255, 62, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 62, 0, 0.4);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 120px 8%;
+            background-color: var(--bg-dark);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 80px;
+            letter-spacing: 2px;
+        }
+
+        .services h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 50px 40px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            background: #181818;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .service-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER / CONTACT */
+        footer {
+            background-color: #000;
+            padding: 100px 8% 40px;
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+
+        .footer-content h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+
+        .footer-content h2 span {
+            color: var(--primary);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+        }
+
+        .footer-bar {
+            border-top: 1px solid #1a1a1a;
+            padding-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bar span {
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        .footer-bar i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            nav { padding: 20px 5%; }
+            nav ul { display: none; } 
+            .hero { padding: 0 5%; text-align: center; }
+            .hero-content p { margin: 0 auto 35px; }
+            .contact-info { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ADWORLD <span>DESIGNER'S</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>BRANDING.<br>DESIGN.<br><span>IMPACT.</span></h1>
+            <p>We design more than graphics, we design <strong>your success.</strong> Creative solutions that cut through the noise and deliver results.</p>
+            <a href="#contact" class="btn-primary">GET STARTED</a>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <h2>OUR SERVICES</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-pen-nib"></i>
+                <h3>LOGO & BRAND IDENTITY</h3>
+                <p>Strategic visual identities that tell your story and build immediate trust with your audience.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>GRAPHIC DESIGN</h3>
+                <p>Versatile design assets from marketing materials to digital content that communicate your value.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>SOCIAL MEDIA DESIGN</h3>
+                <p>Engagement-focused visuals designed to stop the scroll and build a loyal online community.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>ADVERTISING DESIGN</h3>
+                <p>Conversion-driven ad creative for digital and traditional channels that turn views into customers.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>PRINT DESIGN</h3>
+                <p>High-quality tangible designs for business cards, flyers, and merchandise that leave a lasting mark.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Create Something <br><span>EXTRAORDINARY TOGETHER!</span></h2>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 075 459 5441</p>
+                <p><i class="fas fa-envelope"></i> adworlddesigners@gmail.com</p>
+            </div>
+            <div class="footer-bar">
+                <span><i class="fas fa-star"></i> Creative Minds</span>
+                <span><i class="fas fa-bullseye"></i> Strategic Designs</span>
+                <span><i class="fas fa-chart-line"></i> Real Results</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
