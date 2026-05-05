@@ -3,233 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adworld Designer's | Branding. Design. Impact.</title>
+    <title>Adworld Designer's | Portfolio & Web Solutions</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap');
+
         :root {
-            --gold: #ffc107; /* The vibrant gold from the logo */
-            --dark-charcoal: #121212; /* Deep background from the poster */
-            --card-gray: #1e1e1e;
-            --white: #ffffff;
-            --off-white: #b0b0b0;
+            --primary-gold: #ffcc00;
+            --dark-black: #0f0f0f;
+            --surface: #1a1a1a;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
         }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--dark-black);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            line-height: 1.6;
-            background-color: var(--dark-charcoal);
-            color: var(--white);
+            padding: 0;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
-        nav {
+        header {
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 1.2rem 5%;
-            background: rgba(0,0,0,0.9);
-            border-bottom: 1px solid #333;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            text-align: center;
+            background: radial-gradient(circle, rgba(40,40,40,1) 0%, rgba(15,15,15,1) 100%);
+            border-bottom: 5px solid var(--primary-gold);
+            padding: 20px;
         }
 
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.4rem; 
-            letter-spacing: 1px;
+        .logo-placeholder {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-gold);
+            border: 4px solid var(--primary-gold);
+            padding: 10px 20px;
+            margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .logo span { color: var(--gold); }
 
-        /* Hero Section */
-        .hero {
-            padding: 8rem 5%;
-            text-align: left;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            line-height: 1.1;
-            margin: 0; 
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
             text-transform: uppercase;
+            margin: 0;
+            line-height: 1.1;
         }
 
-        .hero h1 .highlight { color: var(--gold); }
-
-        .hero p { 
-            font-size: 1.2rem; 
-            color: var(--off-white); 
-            max-width: 600px; 
-            margin: 2rem 0; 
-            border-left: 3px solid var(--gold);
-            padding-left: 1.5rem;
+        .hero-title span {
+            color: var(--primary-gold);
         }
 
-        .btn {
-            background: var(--gold);
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            color: #000;
+        .tagline {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            margin-top: 20px;
+            color: var(--text-dim);
             text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .btn:hover { background: #fff; transform: scale(1.05); }
-
-        /* Pricing/Services Grid */
-        .services-container {
-            padding: 5rem 5%;
-            background: #000;
         }
 
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-header h2 { 
-            font-size: 2rem; 
-            letter-spacing: 4px; 
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .gold-line { width: 60px; height: 3px; background: var(--gold); margin: 0 auto; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
+            padding: 80px 20px;
         }
 
-        .price-card {
-            background: var(--card-gray);
-            padding: 2.5rem;
-            border: 1px solid #333;
+        .section-header {
+            margin-bottom: 60px;
             text-align: center;
-            transition: all 0.3s ease;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--primary-gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+        }
+
+        .mockup-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-gold);
+            border-bottom: 1px solid #333;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            background-color: #252525;
             position: relative;
         }
 
-        .price-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-        }
-
-        .price-card h3 { 
-            color: var(--gold); 
-            text-transform: uppercase; 
-            font-size: 1.1rem; 
-            margin-bottom: 1rem;
-        }
-
-        .old-price { text-decoration: line-through; color: #555; font-size: 1rem; }
-        .now-price { font-size: 2.2rem; font-weight: bold; margin: 0.5rem 0 1.5rem 0; }
-
-        /* Bottom Bar */
-        .bottom-accent {
-            background: var(--gold);
-            color: #000;
-            padding: 1rem 0;
+        .mockup-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
             display: flex;
-            justify-content: space-around;
-            font-weight: bold;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        /* Footer */
-        footer {
-            padding: 4rem 5%;
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: var(--primary-gold);
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 70px 20px;
             text-align: center;
-            background: var(--dark-charcoal);
+            margin-top: 50px;
+            border-radius: 20px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+
+        .btn-black {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn-black:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #000;
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--text-dim);
             border-top: 1px solid #222;
         }
-        .footer-cta { margin-bottom: 2rem; font-style: italic; color: var(--gold); }
-        .contact-links a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .contact-links a:hover { color: var(--gold); }
 
         @media (max-width: 768px) {
-            .hero { text-align: center; }
-            .hero p { border-left: none; padding-left: 0; margin: 2rem auto; }
-            .bottom-accent { flex-direction: column; text-align: center; gap: 10px; }
+            header { height: auto; padding: 120px 20px; }
+            .hero-title { font-size: 2.8rem; }
+            .cta-section h2 { font-size: 2.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">ADWORLD <span>DESIGNER'S</span></div>
-        <a href="tel:0754595441" class="btn" style="padding: 0.5rem 1.2rem;">Let's Talk</a>
-    </nav>
+    <header>
+        <div class="logo-placeholder">ADWORLD</div>
+        <h1 class="hero-title">BRANDING. <span>DESIGN.</span> IMPACT.</h1>
+        <p class="tagline">Designing Today, Defining Tomorrow.</p>
+    </header>
 
-    <section class="hero">
-        <h1>BRANDING.<br><span class="highlight">DESIGN.</span><br>IMPACT.</h1>
-        <p>We Design More Than Graphics, We Design Your Success. Turning ideas into powerful visual stories that connect, inspire, and grow your brand.</p>
-        <a href="https://wa.me/27754595441" class="btn">Start Your Project</a>
-    </section>
+    <div class="container">
+        <section class="section-header">
+            <p style="font-size: 1.5rem; max-width: 900px; margin: auto; font-style: italic; color: #eee;">
+                "At Adworld Designer's, we turn ideas into powerful visual stories that connect, inspire, and grow your brand."
+            </p>
+        </section>
 
-    <div class="bottom-accent">
-        <span>★ CREATIVE MINDS</span>
-        <span>🎯 STRATEGIC DESIGNS</span>
-        <span>📈 REAL RESULTS</span>
+        <section class="section-header">
+            <h2>Work Portfolio</h2>
+        </section>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="mockup-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600');">
+                    <div class="mockup-overlay">Website Idea:<br>Professional Corporate Portal</div>
+                </div>
+                <div class="card-content">
+                    <h3>Simple Website Designs</h3>
+                    <p>Clean, professional layouts tailored for business growth. We convert your brand identity into a functional digital home.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="mockup-img" style="background-image: url('https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600');">
+                    <div class="mockup-overlay">Logo Concept:<br>Modern Brand Identity Suite</div>
+                </div>
+                <div class="card-content">
+                    <h3>Logo & Brand Identity</h3>
+                    <p>Memorable logos that build lasting impressions. Timeless icons that work across all media formats.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="mockup-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600');">
+                    <div class="mockup-overlay">Advertising Idea:<br>High-Impact Social Ad Campaign</div>
+                </div>
+                <div class="card-content">
+                    <h3>Advertising Design</h3>
+                    <p>High-impact ads that attract, influence, and convert. Visual storytelling that speaks your brand’s language.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="mockup-img" style="background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600');">
+                    <div class="mockup-overlay">Promotional Product:<br>Corporate Merchandise Mockup</div>
+                </div>
+                <div class="card-content">
+                    <h3>Promotional Product Ads</h3>
+                    <p>Visualize your brand on everything from apparel to stationery. See the reach of your brand on physical goods.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Let’s Create Something Extraordinary Together!</h2>
+            <p>Good design isn’t expensive, it’s an investment.</p>
+            <div class="contact-info">
+                📞 075 459 5441 <br>
+                📧 adworlddesigners@gmail.com
+            </div>
+            <a href="mailto:adworlddesigners@gmail.com" class="btn-black">Start Your Project</a>
+        </div>
     </div>
 
-    <section class="services-container">
-        <div class="section-header">
-            <h2>Our Services & Pricing</h2>
-            <div class="gold-line"></div>
-        </div>
-
-        <div class="grid">
-            <div class="price-card">
-                <h3>Simple Motivations</h3>
-                <p class="old-price">WAS R300</p>
-                <p class="now-price">R250</p>
-                <p style="color: var(--off-white); font-size: 0.9rem; margin-bottom: 1.5rem;">Why Companies Should Choose You</p>
-                <a href="tel:0754595441" class="btn" style="width: 80%;">Order</a>
-            </div>
-
-            <div class="price-card" style="border-top: 4px solid var(--gold);">
-                <h3>Ad Designs</h3>
-                <p class="old-price" style="visibility: hidden;">Placeholder</p>
-                <p class="now-price">R350 - R1500</p>
-                <p style="color: var(--off-white); font-size: 0.9rem; margin-bottom: 1.5rem;">High-impact ads that convert</p>
-                <a href="tel:0754595441" class="btn" style="width: 80%;">Get Quote</a>
-            </div>
-
-            <div class="price-card">
-                <h3>Promotion Ads</h3>
-                <p class="old-price">WAS R550</p>
-                <p class="now-price">R400</p>
-                <p style="color: var(--off-white); font-size: 0.9rem; margin-bottom: 1.5rem;">Limited time special offers</p>
-                <a href="tel:0754595441" class="btn" style="width: 80%;">Claim Offer</a>
-            </div>
-
-            <div class="price-card">
-                <h3>Website Designs</h3>
-                <p class="old-price" style="visibility: hidden;">Placeholder</p>
-                <p class="now-price">R1,199 - R2,499</p>
-                <p style="color: var(--off-white); font-size: 0.9rem; margin-bottom: 1.5rem;">Professional web presence</p>
-                <a href="tel:0754595441" class="btn" style="width: 80%;">Inquire</a>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <p class="footer-cta">Let's Create Something Extraordinary Together!</p>
-        <div class="contact-links">
-            <a href="tel:0754595441">📞 075 459 5441</a>
-            <a href="mailto:adworlddesigners@gmail.com">📧 adworlddesigners@gmail.com</a>
-        </div>
-        <p style="margin-top: 3rem; font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 2px;">
-            Designing Today, Defining Tomorrow.
-        </p>
+        <h3 style="color: var(--primary-gold); margin-bottom: 10px;">ADWORLD DESIGNER'S</h3>
+        <p>WHERE CREATIVITY MEETS PURPOSE.</p>
+        <p style="letter-spacing: 2px; font-size: 0.8rem; margin-top: 10px;">DESIGNING TODAY, DEFINING TOMORROW.</p>
+        <p>&copy; 2026 Adworld Designer's. All Rights Reserved.</p>
     </footer>
 
 </body>
